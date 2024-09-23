@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(22, 19, 19);
+}
+
+.clock {
+  width: 450px;
+  height: 450px;
+  border: solid 5px rgb(8, 106, 235);
+  background: url(clock.png), url(https://picsum.photos/id/830/300/300);
+  background-size: cover, cover; /* Ensure both images cover the entire clock area */
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat; /* Prevent repeating for both images */
+
+  background-position: center, center; /* Center the background image */
+  border-radius: 50%; /* Ensure the clock is a perfect circle */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* background-color: rgb(68, 85, 170); */
+  position: relative; /* Position the clock for absolute elements inside */
+}
+
+.clock:before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  z-index: 10000;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+  position: absolute;
+}
+
+.clock .hour,
+.hr {
+  width: 160px;
+  height: 160px;
+}
+
+.clock .min,
+.mn {
+  width: 190px;
+  height: 190px;
+}
+
+.clock .sec,
+.sc {
+  width: 230px;
+  height: 230px;
+}
+
+.hr,
+.mn,
+.sc {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hr:before {
+  width: 6px;
+  height: 80px;
+  content: "";
+  background-color: pink;
+  z-index: 10;
+  position: absolute;
+}
+
+.mn:before {
+  content: "";
+  background-color: white;
+  width: 4px;
+  height: 90px;
+  position: absolute;
+  z-index: 11;
+}
+
+.sc:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 140px;
+  z-index: 12;
+  background-color: aqua;
+}
+
+h1 {
+  font-style: italic; /* Initial font style */
+  color: rgb(59, 138, 218); /* Initial color */
+  transition: color 5.6s ease, opacity 8.5s ease; /* Transition for color and opacity */
+  opacity: 1; /* Initial opacity */
+}
+
+h1.active {
+  color: rgba(12, 22, 16, 0.719); /* Color when active */
+  opacity: 15.8; /* Change opacity when active */
+}
